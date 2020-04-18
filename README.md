@@ -54,7 +54,7 @@ OPTIONS
   -n, --name=name  name of the profile
 ```
 
-_See code: [src\commands\init\profile.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/init/profile.js)_
+_See code: [src/commands/init/profile.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/init/profile.js)_
 
 ## `youtube init:airtable`
 
@@ -68,7 +68,7 @@ OPTIONS
   -n, --name=name  name of the profile
 ```
 
-_See code: [src/commands/init/airtable.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/init/airtable.js)_
+_See code: [src/commands/init/airtable.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/init/airtable.js)_
 
 ## `youtube playlist:list`
 
@@ -82,7 +82,7 @@ OPTIONS
   -p, --profile=profile  [default: default] Name of profile that associated YouTube Data API credential
 ```
 
-_See code: [src/commands/playlist/list.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/playlist/list.js)_
+_See code: [src/commands/playlist/list.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/playlist/list.js)_
 
 ## `youtube playlist:items:delete`
 
@@ -97,7 +97,7 @@ OPTIONS
   --playlist=playlist    (required) Playlist ID from which item to be deleted
 ```
 
-_See code: [src/commands/playlist/items/delete.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/playlist/items/delete.js)_
+_See code: [src/commands/playlist/items/delete.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/playlist/items/delete.js)_
 
 ## `youtube playlist:items:export`
 
@@ -113,7 +113,7 @@ OPTIONS
   --playlist=playlist    [default: all] Playlist Id (id | all)
 ```
 
-_See code: [src/commands/playlist/items/export.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/playlist/items/export.js)_
+_See code: [src/commands/playlist/items/export.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/playlist/items/export.js)_
 
 ## `youtube playlist:items:update`
 
@@ -129,7 +129,7 @@ OPTIONS
   -t, --thumbnail=thumbnail  Video thumbnail(<thumbnail-file-path>)
 ```
 
-_See code: [src/commands/playlist/items/update.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/playlist/items/update.js)_
+_See code: [src/commands/playlist/items/update.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/playlist/items/update.js)_
 
 ## `youtube playlist:items:upload`
 
@@ -147,5 +147,5 @@ OPTIONS
   --playlist=playlist        (required) Playlist ID to which item to be uploaded
 ```
 
-_See code: [src/commands/playlist/items/upload.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/playlist/items/upload.js)_
+_See code: [src/commands/playlist/items/upload.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1-beta.1/src/commands/playlist/items/upload.js)_
 <!-- commandsstop -->

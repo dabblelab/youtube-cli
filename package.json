@@ -1,7 +1,7 @@
 {
   "name": "youtube-cli",
   "description": "Manage youtube data through CLI",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.1",
   "author": " @Mohammad-Khalid",
   "bin": {
     "youtube": "./bin/run"
