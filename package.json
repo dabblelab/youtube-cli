@@ -1,0 +1,54 @@
+{
+  "name": "youtube-cli",
+  "description": "Manage youtube data through CLI",
+  "version": "0.0.1",
+  "author": " @Mohammad-Khalid",
+  "bin": {
+    "youtube": "./bin/run"
+  },
+  "bugs": "https://github.com/Mohammad-Khalid/youtube-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.15.1",
+    "@oclif/plugin-help": "^2.2.3",
+    "airtable": "^0.8.1",
+    "fs-extra": "^9.0.0",
+    "googleapis": "^49.0.0",
+    "inquirer": "^7.1.0",
+    "ora": "^4.0.3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "globby": "^10.0.2",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/Mohammad-Khalid/youtube-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "youtube",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "Mohammad-Khalid/youtube-cli",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme && node script.js",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
