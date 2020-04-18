@@ -54,7 +54,7 @@ OPTIONS
   -n, --name=name  name of the profile
 ```
 
-_See code: [src\commands\init\profile.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/init/profile.js)_
+_See code: [src/commands/init/profile.js](https://github.com/Mohammad-Khalid/youtube-cli/blob/v0.0.1/src/commands/init/profile.js)_
 
 ## `youtube init:airtable`
 
