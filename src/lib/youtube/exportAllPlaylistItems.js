@@ -27,13 +27,16 @@ const exportAllPlaylistItems = async (auth, source, config) => {
             
             for(let pItem of playlist_Items || []){
 
-                const playlistItem_data = await video(auth ,pItem.contentDetails.videoId),
+                let  playlistItem_data = await video(auth ,pItem.contentDetails.videoId),
                       data_item = playlistItem_data.data.items || [];
 
                 if(data_item.length){
 
                     if("airtable" == source)
+                    {
+                        data_item[0].playlist = item.snippet.title;
                         playlistItems_airtable.push(data_item[0]);
+                    }
                     else{
 
                         const videoObj = {

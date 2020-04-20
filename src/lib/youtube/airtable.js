@@ -45,7 +45,8 @@ async function updateAirtableItem(base, airtable_id, video_data, config){
                 "youtube_description" : video_data.snippet.description,
                 "youtube_keywords" : (video_data.snippet.hasOwnProperty('tags')) ? video_data.snippet.tags.toString() : '',
                 "youtube_thumbnail" : thumbnail_url,
-                "youtube_categoryID" : video_data.snippet.categoryId
+                "youtube_categoryID" : video_data.snippet.categoryId,
+                "youtube_playlist" : video_data.playlist
             }
         );
 }
@@ -77,7 +78,8 @@ class YTB_Airtable {
                     "youtube_description" : video_data.snippet.description,
                     "youtube_keywords" : (video_data.snippet.hasOwnProperty('tags')) ? video_data.snippet.tags.toString() : '',
                     "youtube_thumbnail" : thumbnail_url,
-                    "youtube_categoryID" : video_data.snippet.categoryId
+                    "youtube_categoryID" : video_data.snippet.categoryId,
+                    "youtube_playlist" : video_data.playlist
                 });
     }
 

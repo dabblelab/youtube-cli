@@ -7,7 +7,7 @@ const runScript = async() => {
 
         console.log(version);
         let readme = await fs.readFile('readmeText.txt', 'utf8');
-        readme = readme.replace(/v0.0.1/g, `v${version}`);
+        readme = readme.replace(/v0.0.1/g, `master`);
         await fs.outputFile('README.md', readme)
     }catch(err){
         console.log(err);
