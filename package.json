@@ -6,7 +6,7 @@
   "bin": {
     "youtube": "./bin/run"
   },
-  "bugs": "https://github.com/Mohammad-Khalid/youtube-cli/issues",
+  "bugs": "https://github.com/dabblelab/youtube-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.15.1",
@@ -31,7 +31,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/Mohammad-Khalid/youtube-cli",
+  "homepage": "https://github.com/dabblelab/youtube-cli",
   "keywords": [
     "oclif"
   ],
@@ -44,7 +44,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "Mohammad-Khalid/youtube-cli",
+  "repository": "dabblelab/youtube-cli",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "prepack": "oclif-dev manifest && oclif-dev readme && node script.js",
