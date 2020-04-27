@@ -39,3 +39,19 @@ exports.UserChoice = async(msg, choice) => {
 
     return choiceResp.answer;
 }
+
+exports.ConfirmPrompt = async(msg) => {
+
+    const confirmResp = await prompt(
+        [
+            {
+                type : 'confirm',
+                name : 'answer',
+                message : msg,
+                default : true
+            }
+        ]
+    );
+    
+    return confirmResp.answer;
+}

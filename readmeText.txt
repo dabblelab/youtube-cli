@@ -31,10 +31,12 @@ USAGE
 
 <!-- commands -->
 
-_Init_
+_Init And Profile_
 
 * [`youtube init:profile`](#youtube-initprofile)
 * [`youtube init:airtable`](#youtube-initairtable)
+* [`youtube profile:list`](#youtube-profilelist)
+* [`youtube profile:remove`](#youtube-profileremove)
 
 _Playlist And Items_
 
@@ -74,6 +76,31 @@ OPTIONS
 ```
 
 _See code: [src/commands/init/airtable.js](https://github.com/dabblelab/youtube-cli/blob/master/src/commands/init/airtable.js)_
+
+## `youtube profile:list`
+
+List YouTube profiles
+
+```
+USAGE
+  $ youtube profile:list
+```
+
+_See code: [src/commands/profile/list.js](https://github.com/dabblelab/youtube-cli/blob/master/src/commands/profile/list.js)_
+
+## `youtube profile:remove`
+
+Remove YouTube profile
+
+```
+USAGE
+  $ youtube profile:remove
+
+OPTIONS
+  -n, --name=name  name of the profile to remove
+```
+
+_See code: [src/commands/profile/remove.js](https://github.com/dabblelab/youtube-cli/blob/master/src/commands/profile/remove.js)_
 
 ## `youtube playlist:list`
 

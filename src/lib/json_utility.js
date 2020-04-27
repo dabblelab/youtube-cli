@@ -6,6 +6,7 @@ _    = require('lodash');
 
 const youtubeDir = path.resolve(os.homedir(),'.youtube');
 const filePath = path.resolve(os.homedir(),'.youtube','config.json');
+const FORMATTER_SPACING = 29;
 
 const addProfile = async (profileName,valid_credential_object) => {
   const n_profile = {
@@ -34,6 +35,60 @@ const addProfile = async (profileName,valid_credential_object) => {
     profiles.push(n_profile);
     return write(profiles);
   }
+}
+
+const removeProfile = async(profileName) => {
+
+  const profiles = await read(filePath),
+        update_profiles = await profiles.filter(p => p.profileName.trim() != profileName.trim());
+
+  await write(update_profiles);
+  return true;
+
+}
+
+const displayProfile = async() =>{ 
+  const HEADER = 'Profile              Associated YouTube Profile              Associated Airtable Profile';
+  const profileList = stringFormatter(read());
+  if (!profileList) {
+      console.warn('youtube has not set up any profiles yet.');
+      return;
+  }
+  profileList.splice(0, 0, HEADER);
+  profileList.forEach((profile) => {
+      console.log(`   ${profile}`);
+  });
+}
+
+function stringFormatter(profileList) {
+  if (!profileList || profileList.length === 0) {
+      return null;
+  }
+  const formattedProfileList = [];
+  for (const profileObj of profileList) {
+      const formattedYTBProfile = `[${profileObj.profileName}]`;
+      let fillingSpace = ' ';
+      if (formattedYTBProfile.length <= FORMATTER_SPACING) {
+          fillingSpace = ' '.repeat(FORMATTER_SPACING - formattedYTBProfile.length);
+      }
+
+      let NoFillingSpace = ' '.repeat(40 - 8),
+          YesFillingSpace = ' '.repeat(40 - 9);
+      if (!profileObj.token) {
+
+
+          formattedProfileList.push(`${formattedYTBProfile}${fillingSpace}** NO **${NoFillingSpace}** NO **`);
+          continue;
+      }
+
+      let str = `${formattedYTBProfile}${fillingSpace}** YES **`         
+      if(!profileObj.airtable)
+          str += `${YesFillingSpace}** NO **`;
+      else
+        str += `${YesFillingSpace}** YES **`;
+      formattedProfileList.push(str);
+  }
+  return formattedProfileList;
 }
 
 const addAirtable = async (profileName, api_key, base_id, table_name) =>{
@@ -102,5 +157,7 @@ function directoryExists(youtubeDir){
 module.exports = {
   addAirtable,
   addProfile,
+  removeProfile,
+  displayProfile,
   read
 }

@@ -27,16 +27,19 @@ const updatePlaylistItemsAirtable = async (auth, spinner, thumbnailPath, config)
 
       for( let i = 0 ; i < airtableData.length ; i ++){
         
+        const {youtube_id, youtube_title, youtube_description, youtube_keywords, youtube_categoryID} = airtableData[i],
+              keywords = youtube_keywords || '';
+
         const parameters = {
           "auth" : auth,
           "part" : "snippet",
           "resource" : {
-            "id" : airtableData[i].youtube_id,
+            "id" : youtube_id,
             "snippet" : {
-              "title" : airtableData[i].youtube_title,
-              "description" : airtableData[i].youtube_description,
-              "tags" : airtableData[i].youtube_keywords.trim().split(','),
-              "categoryId" : airtableData[i].youtube_categoryID
+              "title" : youtube_title,
+              "description" : youtube_description,
+              "tags" : keywords.trim().split(','),
+              "categoryId" : youtube_categoryID
             }
           }
         };

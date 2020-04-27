@@ -8,7 +8,7 @@ class PlaylistItemsRemove extends Command {
     async run(){
 
         let spinner = await ora();
-        const {flags} = this.parse(PlaylistItemsRemove),
+        let {flags} = this.parse(PlaylistItemsRemove),
               {profile,  playlist} = flags;
 
         try{
@@ -16,6 +16,27 @@ class PlaylistItemsRemove extends Command {
             const auth = await require("../../../lib/client")(profile),
                   YouTubeAPIClient = await new YouTubeAPI(auth.oauth2Client);
 
+            if(!playlist){
+
+                spinner.start(`Getting Playlist...`);
+                const playlists = await YouTubeAPIClient.playlist(),
+                      items = playlists.items || [],
+                      pChoices = items.map(p =>p.snippet.title);
+
+                if(!pChoices.length)
+                {
+                    spinner.fail(`You have no playlist!`);
+                    return;
+                }
+
+                spinner.stop();
+                const selectedPlaylist = await UserChoice('Choose playlist to delete item : ', pChoices),
+                      p = await items.find(p => p.snippet.title == selectedPlaylist);
+
+                playlist = p.id;
+                
+            }
+            
             spinner.start('Getting playlist Items...');
 
             const playlistItems = await YouTubeAPIClient.playlistItems(playlist);
@@ -66,8 +87,7 @@ PlaylistItemsRemove.flags = {
         default : 'default'
     }),
     playlist : flags.string({
-        description : 'Playlist ID from which item to be deleted',
-        required : true
+        description : 'Playlist ID from which item to be deleted'
     })
 };
 
